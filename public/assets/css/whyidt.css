@@ -1,0 +1,21 @@
+.whyidt{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 50px
+}
+
+.whyidt h2, h5{
+  font-weight: bold;
+}
+
+.whyidt .content-card{
+  display: flex; height: 120px;
+}
+
+.whyidt .content-card-text{
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-around;
+  margin-right: 5px;
+  margin-left: 10px;
+  text-align: justify;
+}
