@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Message;
 use Illuminate\Http\Request;
+use App\Models\Category;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
-class MessageController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        return view('admin.message.index', [
-            'messages' => Message::all(),
-            "title" => "Messages",
+        return view('admin.category.index', [
+            'categories' => Category::all(),
+            "title" => "Category",
         ]);
     }
 
@@ -27,7 +28,9 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create',[
+            'title'=> "Category"
+        ]);
     }
 
     /**
@@ -40,24 +43,23 @@ class MessageController extends Controller
     {
         $validateData = $request->validate([
             'name'=> 'required|max:255',
-            'phone'=> 'max:15',
-            'email'=> 'max:255',
-            'subject'=> 'max:255',
-            'message'=> 'max:1000'            
+            'slug'=> 'max:255',
         ]);
 
-        Message::create($validateData);
+        $validateData['user_id'] = auth()->user()->id;
 
-        return redirect('/contact-us')->with('success', 'Message has been sent!');
+        Category::create($validateData);
+
+        return redirect('/admin/category')->with('success', 'Data has been added!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Message  $message
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Message $message)
+    public function show($id)
     {
         //
     }
@@ -65,10 +67,10 @@ class MessageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Message  $message
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
+    public function edit($id)
     {
         //
     }
@@ -77,10 +79,10 @@ class MessageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Message  $message
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -88,12 +90,18 @@ class MessageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Message  $message
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Category $category)
     {
-        Message::destroy($message->id);
-        return redirect('/message')->with('success', 'Data has been deleted!');
+        Category::destroy($category->id);
+        return redirect('/admin/category')->with('success', 'Data has been deleted!');
+    }
+
+    public function checkSlug(Request $request){
+
+        $slug = SlugService::createSlug(Category::class, 'slug',$request->name);
+        return response()->json(['slug'=>$slug]);
     }
 }

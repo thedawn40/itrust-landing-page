@@ -88,7 +88,7 @@
             <div style="display: flex; color: white; justify-content: space-evenly;">
                 <div style="margin-right: 30px">
                     <h2 style="font-weight: bold">Customer Support</h2>
-                    <h2>021xxxxx</h2>
+                    <h2>{{ $company->customer_support }}</h2>
                 </div>
                 <div>
                     <h2 style="font-weight: bold">Need Assistance?</h2>

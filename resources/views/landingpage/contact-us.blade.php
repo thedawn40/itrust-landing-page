@@ -8,6 +8,11 @@
                 <h4>Get in Touch with Us for Any Queries or Support</h4>
                 <!-- <p>Terimakasih Telah Memberikan Kepercayaan Kepada Kami</p> -->
             </header>
+            @if (session()->has('success'))
+            <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+            </div>    
+            @endif
             <div style="display: flex">
             <div class="column">
                 {{-- <img src="../assets/img/features-3.png" alt="Company Image" > --}}
@@ -28,11 +33,12 @@
             </div>
             <div class="column">
                 <div class="form-container">
-                    <form action="#" method="POST">
+                    <form method="POST" action="/message" >
+                        @csrf
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="phone" name="phone" placeholder="Your Phone" required>
                         <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <input type="text" name="subject" placeholder="Subject" >
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit">Send Message</button>
                     </form>

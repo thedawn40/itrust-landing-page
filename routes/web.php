@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
 use Illuminate\Support\Facades\Route;
 use App\Models\News;
 use App\Models\Category;
@@ -10,8 +11,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ResourceNewsController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\SolutionDetailController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,25 +39,25 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middlewar
 
 // Route::get('/admin/news', [NewsController::class, 'index']);
 // Route::get('/admin/news/{news:slug}', [NewsController::class, 'show']);
-Route::get('/admin/category/{category:slug}', function(Category $category){
-    return view('admin/category',[
-        'title' => $category->name,
-        'news' => $category->news,
-        'category'=> $category->name,
-    ]);
-});
-Route::get('/admin/categories', function(){
-    return view('admin/categories',[
-        'title' => "Post Categories",
-        'categories' => Category::all(),
-    ]);
-});
+// Route::get('/admin/category/{category:slug}', function(Category $category){
+//     return view('admin/category',[
+//         'title' => $category->name,
+//         'news' => $category->news,
+//         'category'=> $category->name,
+//     ]);
+// });
+// Route::get('/admin/categories', function(){
+//     return view('admin/categories',[
+//         'title' => "Post Categories",
+//         'categories' => Category::all(),
+//     ]);
+// });
 
 
 
-Route::get('/admin/solutions-new', function () {
-    return view('admin/solutionsdetail');
-});
+// Route::get('/admin/solutions-new', function () {
+//     return view('admin/solutionsdetail');
+// });
 
 
 
@@ -73,4 +76,9 @@ Route::resource('/admin/solution', SolutionController::class)->middleware('auth'
 Route::resource('/admin/solution/detail', SolutionDetailController::class)->middleware('auth');
 Route::get('/admin/solution/detail/create/{solution:id}', [SolutionDetailController::class, 'addDetail'])->middleware('auth');
 
+Route::resource('/message', MessageController::class);
 
+Route::resource('/admin/category', CategoryController::class)->middleware('auth');
+Route::get('/resource/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware('auth');
+
+Route::resource('/admin/company', CompanyController::class)->middleware('auth');

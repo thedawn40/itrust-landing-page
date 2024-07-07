@@ -46,13 +46,14 @@
                 <div class="nav_list"> 
 					<a href="/" class="nav_link"> <i class='bx bx-home nav_icon'></i> <span class="nav_name">Home</span> </a>                     
                     <a href="/admin/dashboard" class="nav_link {{ Request::is('admin/dashboard') ? 'active' : '' }}"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> 
-                    {{-- <a href="/admin/dashboard" class="nav_link {{ Request::is('admin/dashboard') ? 'active' : '' }}"> <i class='bx bx-store-alt nav_icon'></i> <span class="nav_name">Company Profile</span> </a>  --}}
+                    <a href="/admin/company" class="nav_link {{ Request::is('admin/company') ? 'active' : '' }}"> <i class='bx bx-store-alt nav_icon'></i> <span class="nav_name">Company Profile</span> </a> 
 					{{-- <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a>  --}}
 					<a href="/admin/solution" class="nav_link {{ Request::is('admin/solution*') ? 'active' : '' }}"> <i class='bx bx-check-square nav_icon'></i> <span class="nav_name">Solutions</span> </a> 
 					<a href="/admin/news" class="nav_link {{ Request::is('admin/news*') ? 'active' : '' }}"> <i class='bx bx-news nav_icon'></i> <span class="nav_name">News & Event</span> </a> 
 					<a href="/admin/partner" class="nav_link {{ Request::is('admin/partner*') ? 'active' : '' }}"> <i class='bx bx-group nav_icon'></i> <span class="nav_name">Partner</span> </a> 
 					<a href="/admin/client" class="nav_link {{ Request::is('admin/client*') ? 'active' : '' }}"> <i class='bx bx-user-plus nav_icon'></i> <span class="nav_name">Client</span> </a> 
-					<a href="/admin/news" class="nav_link {{ Request::is('admin/message*') ? 'active' : '' }}"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Message</span> </a> 
+					<a href="/message" class="nav_link {{ Request::is('message*') ? 'active' : '' }}"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Message</span> </a> 
+					<a href="/admin/category" class="nav_link {{ Request::is('admin/category*') ? 'active' : '' }}"> <i class='bx bx-tag nav_icon'></i> <span class="nav_name">Category</span> </a> 
 				</div>
             </div> 
 			<a class="nav_link" type="submit" href="{{ url('/logout') }}"><i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign Out</span></a>
