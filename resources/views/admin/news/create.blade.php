@@ -1,5 +1,6 @@
 @extends('admin.layouts.main')
 
+
 @section('container')
 
 <h1>Create News & Event</h1>
@@ -105,11 +106,7 @@
     }
   }
 
-  $(document).ready(function() {
-  $('#summernote').summernote({
-    height:200
-  });
-});
+  
 
 </script>
 

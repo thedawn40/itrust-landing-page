@@ -80,7 +80,7 @@
           <td>{{ $item->description }}</td>
           <td> 
               <a href="/admin/solution/{{ $item->name }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
-              <a href="/admin/solution/{{ $item->name }}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+              <a href="/admin/solution/{{ $item->name }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i></a>
   
               <form action="/admin/solution/{{ $item->name }}" method="POST" class="d-inline">
                 @method('delete') 

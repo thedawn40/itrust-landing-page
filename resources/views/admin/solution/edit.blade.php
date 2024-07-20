@@ -64,7 +64,7 @@
   <hr>
   <a href="/admin/solution/detail/create/{{ $solution->id }}" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Add Detail</a>
 <div class="table-responsive">
-  <table class="table table-hover table-bordered">
+  <table class="table table-hover table-bordered" id="dataTable">
       <thead>
         <tr>
           <th scope="col">No</th>
@@ -81,7 +81,7 @@
           <td>{{ $item->description }}</td>
           <td> 
               <a href="/admin/solution/{{ $item->name }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
-              <a href="/admin/solution/{{ $item->name }}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+              <a href="/admin/solution/{{ $item->name }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 
               <form action="/admin/solution/detail/{{ $item->id }}" method="POST" class="d-inline">
                 @method('delete') 

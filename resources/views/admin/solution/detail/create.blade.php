@@ -25,8 +25,7 @@
       @error('description')
           <p class="text-danger">{{ $message }}</p>
       @enderror
-      <input id="description" type="hidden" name="description">
-      <trix-editor input="description"></trix-editor>
+      <textarea id="summernote" name="description"></textarea>
     </div>
   </div>
   <div class="row mb-3">
