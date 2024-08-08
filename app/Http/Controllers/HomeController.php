@@ -14,13 +14,13 @@ class HomeController extends Controller
     
 
     public function index(){
-        return view('landingpage/test',[
+        return view('landingpage/home',[
             "title" => "Home",
-            // "solutions" => Solution::all(),
-            // "news" => News::all(),
-            // "partners" => Partner::all(),
-            // "clients" => Client::all(),
-            // "company" => Company::all()->first()
+            "solutions" => Solution::all(),
+            "news" => News::all(),
+            "partners" => Partner::all(),
+            "clients" => Client::all(),
+            "company" => Company::all()->first()
         ]);
     }
 
