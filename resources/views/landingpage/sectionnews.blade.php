@@ -70,9 +70,9 @@ button:focus {
             <div class="cards-wrapper">
               @foreach ($news as $post)
                 <div class="card">
-                  <div class="image-content" >
+                  <div class="image-content" style="height: 250px">
                     @if ($post->image)
-                      <img src="{{ asset('storage/' . $post->image) }}" style="height: 250px" alt="" class="card-img">
+                      <img src="{{ asset('storage/' . $post->image) }}" alt="" class="card-img">
                     @else
                         <img src="https://source.unsplash.com/250x200?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid mb-3">
                     @endif

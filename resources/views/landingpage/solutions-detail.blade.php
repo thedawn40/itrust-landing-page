@@ -22,14 +22,14 @@
             </header>
             <main>
                 @foreach ($solution->details as $item)
-                    <div style="display: flex" class="container-solution-detail">
-                        <div>
-                            <h2>{{ $item->name }}</h2>
-                            <h6>{!! $item->description !!}</h6>    
-                            <a href="" class="btn btn-primary">Read More</a>
+                    <div style="display: flex; justify-content: space-between;" class="container-solution-detail" >
+                        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                            <h2 style="text-align: left;">{{ $item->name }}</h2>
+                            <h6 style="text-align: left;">{!! $item->description !!}</h6>    
+                            <a href="" class="btn btn-primary" style="align-self: flex-start;">Read More</a>
                         </div>
-                        <div>
-                            <img src="{{ asset('storage/' . $item->image) }}" alt="Card image">
+                        <div style="width: 30%">
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="Card image" style="width: 100%">
                         </div>
                     </div>
                 @endforeach

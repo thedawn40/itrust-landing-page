@@ -68,7 +68,10 @@ class SolutionController extends Controller
      */
     public function show(Solution $solution)
     {
-        //
+        return view('admin.solution.detail',[
+            'solution' => $solution,
+            'title'=> "Solution"
+        ]);
     }
 
     /**

@@ -4,13 +4,10 @@
         <div class="container">
             <div class="row gy-4" style="justify-content: space-around">
                 <div class="col-lg-5 col-md-12 footer-info">
-                    <a href="" class="logo d-flex align-items-center">
+                    <a href="" class="logo d-flex align-items-center mb-4">
                         <span>iTrust Data Teknologi</span>
                     </a>
-                    <p>
-                        Perkantoran Prominence 38D no. 47
-                    <br>
-                        Jl Jalur Sutera Boulevard Alam Sutera, Tangerang, Banten 15143
+                    <p>{!! nl2br(e($company->address)) !!}
                     </p>
                 </div>
                 <div class="col-lg-2 col-6 footer-links">
@@ -32,9 +29,9 @@
                         <li><i class="bi bi-chevron-right"></i> <a href="/contact-us">Contact</a></li>
                         @auth
                         @else
-                            <li>
+                            {{-- <li>
                                 <a href="/login" class="bi bi-chevron-right">Sign In</a>
-                            </li>
+                            </li> --}}
                         @endauth
                     </ul>
                 </div>

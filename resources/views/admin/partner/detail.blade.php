@@ -2,9 +2,15 @@
 
 @section('container')
 
-<h1>View Partner</h1>
-<hr>
-<a href="/admin/partner" class="btn btn-primary mb-3"><span><i class="fa fa-arrow-left"></i> Back</span></a>
+@include('admin.partner.title')
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3" style="display: flex; align-items: center;">
+      <a href="/admin/partner" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
+        <h6 class="m-0 font-weight-bold text-primary">View Data</h6>
+    </div>
+    <div class="card-body">
 <div class="row mb-3">
     <label for="name" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-10">
@@ -26,6 +32,8 @@
     </div>
     </div>
     <div class="row mb-3">
+</div>
+    </div>
 </div>
 
 

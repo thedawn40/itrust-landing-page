@@ -24,10 +24,10 @@
                 <div class="address">
                     <h2>Our Address</h2>
                     <p>
-                        Perkantoran Prominence 38D no. 47<br>
-                        Jl Jalur Sutera Boulevard Alam Sutera, Tangerang, Banten 15143<br>
-                        Phone: (021) 123-4567<br>
-                        Email: info@itrustdata.com
+                        {!! nl2br(e($company->address)) !!}
+                        <br>
+                        Phone: {{ $company->customer_support }}<br>
+                        Email: {{ $company->email }}
                     </p>
                 </div>
             </div>

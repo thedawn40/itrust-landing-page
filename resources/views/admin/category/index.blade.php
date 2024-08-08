@@ -2,8 +2,8 @@
 
 @section('container')
     
-<h1>Category</h1>
-<hr>
+@include('admin.category.title')
+
 @if (session()->has('success'))
 <div class="alert alert-success" role="alert">
   {{ session('success') }}
@@ -12,8 +12,13 @@
 
 <a href="/admin/category/create" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Create New</a>
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Category List</h6>
+  </div>
+  <div class="card-body">
 <div class="table-responsive">
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered" id="dataTable">
     <thead>
       <tr>
         <th scope="col">No</th>
@@ -38,6 +43,8 @@
       @endforeach
     </tbody>
   </table>
+</div>
+  </div>
 </div>
 
   

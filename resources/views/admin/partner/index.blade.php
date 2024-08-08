@@ -2,24 +2,20 @@
 
 @section('container')
 
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Partners</h1>
-<p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-    For more information about DataTables, please visit the <a target="_blank"
-        href="https://datatables.net">official DataTables documentation</a>.</p>
+@include('admin.partner.title')
 
-        @if (session()->has('success'))
-        <div class="alert alert-success" role="alert">
-          {{ session('success') }}
-        </div>    
-        @endif
+@if (session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>    
+@endif
                 
 <a href="/admin/partner/create" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Create New</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Partner List</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -28,7 +24,7 @@
                     <tr>
                       <th scope="col">No</th>
                       <th scope="col">Title</th>
-                      <th scope="col">Category</th>
+                      <th scope="col">Logo</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>

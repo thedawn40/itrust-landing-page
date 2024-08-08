@@ -2,9 +2,14 @@
 
 @section('container')
 
-<h1>Edit Client</h1>
-<hr>
+@include('admin.client.title')
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3" style="display: flex; align-items: center;">
+    <a href="/admin/client" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
+      <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
+  </div>
+  <div class="card-body">
 <form method="POST" action="/admin/client/{{ $client->name }}" enctype="multipart/form-data">
     @method('put')
     @csrf
@@ -43,9 +48,10 @@
       <div class="col-sm-10">
         <button type="submit" class="btn btn-primary">Update Client</button>
       </div>
-    </div>
-  
+    </div>  
 </form>
+  </div>
+</div>
 
 <script>
 function previewImage(){

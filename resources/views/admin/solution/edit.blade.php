@@ -2,8 +2,14 @@
 
 @section('container')
 
-<h1>Edit Solution</h1>
-<hr>
+@include('admin.solution.title')
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3" style="display: flex; align-items: center;">
+    <a href="/admin/solution" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
+      <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
+  </div>
+  <div class="card-body">
 <form method="POST" action="/admin/solution/{{ $solution->name }}" enctype="multipart/form-data">
   @method('put')
   @csrf  
@@ -17,21 +23,9 @@
           </div>
       @enderror
     </div>
-  </div>
+  </div>  
   <div class="row mb-3">
-    <label for="description" class="col-sm-2 col-form-label">Description</label>
-    <div class="col-sm-10">
-      {{-- <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" required rows="4">{{ $solution->description }}</textarea> --}}
-      <textarea id="summernote" name="body">{{ $solution->description }}</textarea>
-      @error('description')
-          <div class="invalid-feedback">
-            {{ $message }}
-          </div>
-      @enderror
-    </div>
-  </div>
-  <div class="row mb-3">
-    <label for="image" class="col-sm-2 col-form-label">Upload Image</label>
+    <label for="image" class="col-sm-2 col-form-label">Title Image</label>
     <input type="hidden" name="oldImage" value="{{ $solution->image }}">
     <div class="col-sm-10">
       <div class="mb-3">
@@ -47,6 +41,18 @@
           </div>
         @enderror
       </div>    
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      {{-- <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" required rows="4">{{ $solution->description }}</textarea> --}}
+      <textarea id="summernote" name="body">{{ $solution->description }}</textarea>
+      @error('description')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
     </div>
   </div>
   <div class="row mb-3">
@@ -95,7 +101,8 @@
     </table>
   </div>
 </div>
-
+  </div>
+</div>
 <script>
 
 

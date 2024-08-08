@@ -2,9 +2,14 @@
 
 @section('container')
 
-<h1>Create Partner</h1>
-<hr>
+@include('admin.partner.title')
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3" style="display: flex; align-items: center;">
+    <a href="/admin/partner" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
+      <h6 class="m-0 font-weight-bold text-primary">Create Data</h6>
+  </div>
+  <div class="card-body">
 <form method="POST" action="/admin/partner" enctype="multipart/form-data">
   @csrf
   <div class="row mb-3">
@@ -38,8 +43,9 @@
       <button type="submit" class="btn btn-primary">Create Partner</button>
     </div>
   </div>
-
 </form>
+  </div>
+</div>
 
 <script>
   function previewImage(){

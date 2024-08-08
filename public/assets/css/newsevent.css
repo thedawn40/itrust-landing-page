@@ -82,7 +82,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FBE9FF;
+  /* background-color: #FBE9FF; */
   transition: top 0.5s;
   z-index: -1;
 }

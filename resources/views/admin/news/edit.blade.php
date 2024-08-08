@@ -2,9 +2,14 @@
 
 @section('container')
 
-<h1>Edit News & Event</h1>
-<hr>
+@include('admin.news.title')
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3" style="display: flex; align-items: center;">
+    <a href="/admin/news" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
+      <h6 class="m-0 font-weight-bold text-primary">Edit Data</h6>
+  </div>
+  <div class="card-body">
 <form method="POST" action="/admin/news/{{ $news->slug }}" enctype="multipart/form-data">
   @method('put')
   @csrf  
@@ -80,9 +85,9 @@
       <button type="submit" class="btn btn-primary">Update News & Event</button>
     </div>
   </div>
-
-
 </form>
+</div>
+</div>
 
 <script>
   const title = document.querySelector('#title');

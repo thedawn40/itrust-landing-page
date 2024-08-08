@@ -2,16 +2,23 @@
 
 @section('container')
     
-<h1>Messages</h1>
-<hr>
+<h1 class="h3 mb-2 text-gray-800">Messages</h1>
+<p class="mb-3">Efficiently Manage and Communicate with Your Users. For help please refer to read <a target="_blank"
+  href="https://datatables.net">documentation</a>.</p>
+
 @if (session()->has('success'))
 <div class="alert alert-success" role="alert">
   {{ session('success') }}
 </div>    
 @endif
 
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Message List</h6>
+  </div>
+  <div class="card-body">
 <div class="table-responsive">
-<table class="table table-hover table-bordered">
+<table class="table table-hover table-bordered"  id="dataTable">
     <thead>
       <tr>
         <th scope="col">No</th>
@@ -44,6 +51,8 @@
       @endforeach
     </tbody>
   </table>
+</div>
+</div>
 </div>
 
   
