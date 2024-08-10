@@ -70,13 +70,13 @@
  
   </main>
 
-  {{-- <a class="contact-button" href="<?php echo "https://api.whatsapp.com/send?phone=&text=Halo"; ?>" target="_blank" rel="noopener noreferrer" class = "ahref_costum" >
+   <a class="contact-button" href="<?php echo "https://api.whatsapp.com/send?phone=&text=Halo saya memiliki pertanyaan"; ?>" target="_blank" rel="noopener noreferrer" class = "ahref_costum" >
 	<div>
 
 		<i class="fas fa-phone"></i>	
 		Chat with US! 
 	</div>
-	</a> --}}
+	</a> 
 
 	@include('landingpage.partials.footer')
 
@@ -160,15 +160,15 @@
 		},
 	});
 
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/669bc565becc2fed69281b5c/1i387m5m0';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
+	// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	// (function(){
+	// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	// s1.async=true;
+	// s1.src='https://embed.tawk.to/669bc565becc2fed69281b5c/1i387m5m0';
+	// s1.charset='UTF-8';
+	// s1.setAttribute('crossorigin','*');
+	// s0.parentNode.insertBefore(s1,s0);
+	// })();
 
 
 	</script>
