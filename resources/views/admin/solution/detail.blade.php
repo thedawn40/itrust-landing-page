@@ -35,6 +35,35 @@
         {!! $solution->description !!}
       </div>
     </div>
+
+    <div>
+      <h3>Solution Item</h3>
+      <hr>
+    <div class="table-responsive">
+      <table class="table table-hover table-bordered" id="dataTable">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+           @foreach ($solution->details as $item)
+            <tr>
+              <th scope="row">{{ $loop->iteration }}</th>
+              <td> {{ $item->name }} </td>
+              <td>{!! $item->description !!}</td>
+              <td> 
+                  <a href="/admin/solution/detail/{{ $solution->id }}/{{ $item->id }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
+              </td>
+            </tr>          
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 

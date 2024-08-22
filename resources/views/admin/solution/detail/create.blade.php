@@ -11,7 +11,7 @@
   </div>
   <div class="card-body">
 
-    <form method="POST" action="/admin/solution/detail" enctype="multipart/form-data">
+    <form method="POST" action="/admin/solution/detail/create/{{ $solution->id }}" enctype="multipart/form-data">
       @csrf
       <input type="hidden" id="solutionid" name="solutionid" value="{{ $solution->id }}">
       <div class="row mb-3">

@@ -13,7 +13,7 @@
                 <div class="col-lg-2 col-6 footer-links">
                     <h4>Sosial Media</h4>
                     <ul>						
-                        <li><i class="bi bi-twitter"></i> <a href="{{ $company->twitter }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                        <li><i class="bi bi-linkedin"></i> <a href="{{ $company->twitter }}" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
                         <li><i class="bi bi-facebook"></i> <a href="{{ $company->facebook }}" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                         <li><i class="bi bi-instagram"></i> <a href="{{ $company->instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                         <li><i class="bi bi-whatsapp"></i> <a href="{{ $company->whatsapp }}" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>

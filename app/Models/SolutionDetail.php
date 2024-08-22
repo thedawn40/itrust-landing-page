@@ -11,4 +11,9 @@ class SolutionDetail extends Model
 
     protected $guarded = ['id'];
 
+    public function solution()
+    {
+        return $this->belongsTo(Solution::class);
+    }
+
 }

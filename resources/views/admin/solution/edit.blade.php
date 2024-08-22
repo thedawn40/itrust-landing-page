@@ -4,6 +4,12 @@
 
 @include('admin.solution.title')
 
+@if (session()->has('success'))
+<div class="alert alert-success" role="alert">
+  {{ session('success') }}
+</div>    
+@endif
+
 <div class="card shadow mb-4">
   <div class="card-header py-3" style="display: flex; align-items: center;">
     <a href="/admin/solution" style="margin-right:10px"><span><i class="fa fa-arrow-left"></i> </span></a>
@@ -47,7 +53,7 @@
     <label for="description" class="col-sm-2 col-form-label">Description</label>
     <div class="col-sm-10">
       {{-- <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description" required rows="4">{{ $solution->description }}</textarea> --}}
-      <textarea id="summernote" name="body">{{ $solution->description }}</textarea>
+      <textarea id="summernote" name="description">{{ $solution->description }}</textarea>
       @error('description')
           <div class="invalid-feedback">
             {{ $message }}
@@ -75,7 +81,7 @@
         <tr>
           <th scope="col">No</th>
           <th scope="col">Title</th>
-          <th scope="col">Category</th>
+          <th scope="col">Description</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -84,12 +90,12 @@
         <tr>
           <th scope="row">{{ $loop->iteration }}</th>
           <td> {{ $item->name }} </td>
-          <td>{{ $item->description }}</td>
+          <td>{!! $item->description !!}</td>
           <td> 
-              <a href="/admin/solution/{{ $item->name }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
-              <a href="/admin/solution/{{ $item->name }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+              <a href="/admin/solution/detail/{{ $solution->id }}/{{ $item->id }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
+              <a href="/admin/solution/detail/{{ $solution->id }}/{{ $item->id }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 
-              <form action="/admin/solution/detail/{{ $item->id }}" method="POST" class="d-inline">
+              <form action="/admin/solution/detail/{{ $solution->id }}/{{ $item->id }}/delete" method="POST" class="d-inline">
                 @method('delete') 
                 @csrf           
                 <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
@@ -124,9 +130,9 @@
     }
   }
 
-  $('#summernote').summernote({
-    height:200
-  });
+  // $('#summernote').summernote({
+  //   height:200
+  // });
 </script>
 
 @endsection

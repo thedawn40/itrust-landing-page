@@ -11,12 +11,14 @@
 
     <title>iTrust | {{ $title }}</title>
 
-    <link href="../../../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Favicon -->
+    <link rel="icon" href="../../../../../../img/itrust_icon.ico" type="image/x-icon">
+    <link href="../../../../../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="../../../../assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../../../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">    
+    <link href="../../../../../assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
 
@@ -33,7 +35,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon">
-                    <img src="../../../../img/itrust_icon.ico" width="30px" alt="">
+                    <img src="../../../../../../img/itrust_icon.ico" width="30px" alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">ITrust</div>
             </a>
@@ -138,7 +140,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name }}</span>
                              <img class="img-profile rounded-circle"
-                                    src="../../../assets/img/undraw_profile.svg">
+                                    src="../../../../../assets/img/undraw_profile.svg">
                             </a>
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="/">Home</a></li>
@@ -212,21 +214,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../../../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../../../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../../../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../../../assets/js/sb-admin-2.min.js"></script>
+    <script src="../../../../../assets/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../../../assets/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../../../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../../../../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../../../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../../../assets/js/demo/datatables-demo.js"></script>
+    <script src="../../../../../assets/js/demo/datatables-demo.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

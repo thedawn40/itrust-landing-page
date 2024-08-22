@@ -73,8 +73,17 @@ Route::resource('/admin/partner',PartnerController::class)->middleware('auth');
 Route::resource('/admin/client',ClientController::class)->middleware('auth');
 
 Route::resource('/admin/solution', SolutionController::class)->middleware('auth');
+Route::get('/admin/solution/{solution}/edit', [SolutionController::class, 'edit'])->middleware('auth')->name('admin.solution.edit');
+
+
 Route::resource('/admin/solution/detail', SolutionDetailController::class)->middleware('auth');
 Route::get('/admin/solution/detail/create/{solution:id}', [SolutionDetailController::class, 'addDetail'])->middleware('auth');
+Route::post('/admin/solution/detail/create/{solution:id}', [SolutionDetailController::class, 'createDetail'])->middleware('auth');
+Route::get('/admin/solution/detail/{solution:id}/{details:id}', [SolutionDetailController::class, 'viewDetail'])->middleware('auth');
+Route::get('/admin/solution/detail/{solution:id}/{details:id}/edit', [SolutionDetailController::class, 'showDetail'])->middleware('auth');
+Route::put('/admin/solution/detail/{solution:id}/{details:id}/edit', [SolutionDetailController::class, 'updateDetail'])->middleware('auth');
+Route::delete('/admin/solution/detail/{solution:id}/{details:id}/delete', [SolutionDetailController::class, 'deleteDetail'])->middleware('auth');
+
 
 Route::resource('/message', MessageController::class);
 

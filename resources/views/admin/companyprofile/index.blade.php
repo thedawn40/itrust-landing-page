@@ -56,8 +56,8 @@
       <div class="row mb-3">
         <label for="customersupport" class="col-sm-2 col-form-label">Customer Support</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control @error('customersupport') is-invalid @enderror" id="customersupport" name="customersupport"  value="{{ old('customersupport', $company->customer_support) }}">
-          @error('customersupport')
+          <input type="text" class="form-control @error('customer_support') is-invalid @enderror" id="customer_support" name="customer_support"  value="{{ old('customer_support', $company->customer_support) }}">
+          @error('customer_support')
               <div class="invalid-feedback">
                 {{ $message }}
               </div>
@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="row mb-3">
-        <label for="twitter" class="col-sm-2 col-form-label">Twitter</label>
+        <label for="twitter" class="col-sm-2 col-form-label">Linkedin</label>
         <div class="col-sm-10">
           <input type="text" class="form-control @error('twitter') is-invalid @enderror" id="twitter" name="twitter"  value="{{ old('twitter', $company->twitter) }}">
           @error('twitter')

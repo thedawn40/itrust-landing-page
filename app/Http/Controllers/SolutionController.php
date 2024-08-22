@@ -55,9 +55,12 @@ class SolutionController extends Controller
 
         $validateData['user_id'] = auth()->user()->id;
 
-        Solution::create($validateData);
+        $solution = Solution::create($validateData);
 
-        return redirect('/admin/solution')->with('success', 'Data has been added!');
+        // return redirect('/admin/solution')->with('success', 'Data has been added!');
+        return redirect()->route('admin.solution.edit', [
+            'solution' => $solution->name,
+        ])->with('success', 'Data has been added!');
     }
 
     /**
@@ -97,6 +100,29 @@ class SolutionController extends Controller
      */
     public function update(Request $request, Solution $solution)
     {
+        $description = $request->description;
+
+        libxml_use_internal_errors(true);
+        $dom = new \DOMDocument();
+        $dom->loadHTML($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+       $imageFile = $dom->getElementsByTagName('imageFile');
+ 
+       foreach($imageFile as $item => $image)
+       {
+           $data = $image->getAttribute('src');
+           list($type, $data) = explode(';', $data);
+           list(, $data)      = explode(',', $data);
+           $imgeData = base64_decode($data);
+           $image_name= "/upload/" . time().$item.'.png';
+           $path = public_path() . $image_name;
+           file_put_contents($path, $imgeData);           
+           $image->removeAttribute('src');
+           $image->setAttribute('src', $image_name);
+        }
+ 
+       $description = $dom->saveHTML();
+
         $rules = [
             'name'=> 'required|max:255',
             'description'=> 'required',
@@ -110,6 +136,7 @@ class SolutionController extends Controller
             }
             $validateData['image'] = $request->file('image')->store('solution-images');
         }
+        $validateData['description'] = $description;
 
         Solution::where('id', $solution->id)->update($validateData);
 
