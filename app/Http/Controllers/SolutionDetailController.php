@@ -220,7 +220,7 @@ class SolutionDetailController extends Controller
 
 
     public function deleteDetail(Solution $solution, SolutionDetail $details)
-    {        
+    {      
         if ($details->image) {
             Storage::delete($details->image);
         }

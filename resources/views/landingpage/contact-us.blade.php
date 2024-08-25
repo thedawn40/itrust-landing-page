@@ -1,7 +1,21 @@
 @extends('landingpage/layouts.main')
 
+<style>    
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white;
+    }
+    main {
+        padding-top: 70px; /* Adjust this value based on your header's height */
+    }
+</style>
+
 @section('container')
-    <section style="padding: 7%" class="navbar-news">
+    <section class="navbar-news">
         <div class="container contact-us" data-aos="fade-up">
             <header class="section-header" >
                 <h2 class="hero-title" style="background-image: url('../assets/5667001.jpg'); background-size: cover; background-position: center; height: 100px;  display: flex; justify-content: center; align-items: center; text-align: center;">Contact US</h2>

@@ -4,6 +4,8 @@
 
 @include('admin.solution.title')
 
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 @if (session()->has('success'))
 <div class="alert alert-success" role="alert">
   {{ session('success') }}

@@ -21,7 +21,6 @@
     <link href="../../../../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
-
 </head>
 
 <body id="body-pd">
@@ -62,6 +61,12 @@
                 <a class="nav-link" href="/admin/company">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Company Profile</span></a>
+            </li>
+
+            <li class="nav-item {{ Request::is('admin/main-content') ? 'active' : '' }}">
+                <a class="nav-link" href="/admin/main-content">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Main Content</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -230,8 +235,10 @@
     <!-- Page level custom scripts -->
     <script src="../../../../../assets/js/demo/datatables-demo.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    {{-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
@@ -306,7 +313,26 @@
 
         $(document).ready(function() {
             $('#summernote').summernote({
-            height:200
+                height:200
+            });
+
+            $('#descriptionEditor').summernote({
+                height: 200,
+                // toolbar: [
+                //     ['style', ['style']],
+                //     ['font', ['bold', 'underline', 'clear']],
+                //     ['para', ['ul', 'ol', 'paragraph']],
+                //     ['view', ['fullscreen', 'codeview', 'help']]
+                // ]
+            });
+
+            // Initialize Summernote for the media editor with image/video configuration
+            $('#mediaEditor').summernote({
+                height: 200,
+                // toolbar: [
+                //     ['insert', ['picture', 'video']],
+                //     ['view', ['fullscreen', 'codeview', 'help']]
+                // ]
             });
         });
     </script>

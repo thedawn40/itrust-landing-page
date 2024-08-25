@@ -1,8 +1,22 @@
 @extends('landingpage/layouts.main')
 
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white;
+    }
+    main {
+        padding-top: 70px; /* Adjust this value based on your header's height */
+    }
+</style>
+
 @section('container')
 
-    <section style="padding: 7%" 
+    <section 
     {{-- class="navbar-solutions" --}}
     >
         <div class="container" data-aos="fade-up">

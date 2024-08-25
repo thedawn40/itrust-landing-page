@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Partner;
 use App\Models\Solution;
+use App\Models\MainContent;
 
 class HomeController extends Controller
 {
@@ -16,11 +17,12 @@ class HomeController extends Controller
     public function index(){
         return view('landingpage/home',[
             "title" => "Home",
+            "maincontent" => MainContent::all(),
             "solutions" => Solution::all(),
             "news" => News::all(),
             "partners" => Partner::all(),
             "clients" => Client::all(),
-            "company" => Company::all()->first()
+            "company" => Company::all()->first(),
         ]);
     }
 

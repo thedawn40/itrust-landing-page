@@ -6,10 +6,24 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 20px;
     }
+
+    
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: white;
+    }
+    main {
+        padding-top: 70px; /* Adjust this value based on your header's height */
+    }
 </style>
 
+
 @section('container')
-    <section style="padding: 7%">
+    <section>
         <div class="container" data-aos="fade-up">
             <header class="section-header" >
                 <h2 class="hero-title" style="background-image: url('../assets/5667001.jpg'); background-size: cover; background-position: center; height: 100px;  display: flex; justify-content: center; align-items: center; text-align: center;">Solutions</h2>

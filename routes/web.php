@@ -15,6 +15,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\SolutionDetailController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MainContentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,3 +92,4 @@ Route::resource('/admin/category', CategoryController::class)->middleware('auth'
 Route::get('/resource/category/checkSlug', [CategoryController::class, 'checkSlug'])->middleware('auth');
 
 Route::resource('/admin/company', CompanyController::class)->middleware('auth');
+Route::resource('/admin/main-content', MainContentController::class)->middleware('auth');
