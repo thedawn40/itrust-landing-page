@@ -34,6 +34,7 @@ Route::get('/news-events', [HomeController::class, 'news']);
 Route::get('/news-events/{news:slug}', [HomeController::class, 'newsDetail']);
 Route::get('/solutions', [HomeController::class, 'solutions']);
 Route::get('/solutions/{solution:name}', [HomeController::class, 'solutionDetail']);
+Route::get('/solutions/{solution:name}/{detail:name}', [HomeController::class, 'solutionDetailItem']);
 Route::get('/contact-us', [HomeController::class, 'contactus']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middleware('auth');

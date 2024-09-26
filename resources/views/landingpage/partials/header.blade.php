@@ -2,7 +2,7 @@
 <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
         <a href="" class="logo d-flex align-items-center">
-            <img src="../img/itrust_icon.png" alt="">
+            <img src="../../img/itrust_icon.png" alt="">
         </a>
         <!-- .navbar -->
         <nav id="navbar" class="navbar">

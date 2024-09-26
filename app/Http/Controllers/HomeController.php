@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Models\Partner;
 use App\Models\Solution;
 use App\Models\MainContent;
+use App\Models\SolutionDetail;
 
 class HomeController extends Controller
 {
@@ -39,6 +40,18 @@ class HomeController extends Controller
         return view('landingpage/solutions-detail',[
             "title" => "Solutions",
             "solution" => $solution,
+            "company" => Company::all()->first()
+        ]);
+    }
+
+    public function solutionDetailItem(Solution $solution, SolutionDetail $detail) {
+        // You can use $solution (already fetched by name)
+        // You may need to find the detail by its ID
+        
+        return view('landingpage/solutions-detail-item', [
+            "title" => "Solutions",
+            "solution" => $solution,
+            "detail" => $detail,
             "company" => Company::all()->first()
         ]);
     }

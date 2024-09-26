@@ -16,4 +16,9 @@ class SolutionDetail extends Model
         return $this->belongsTo(Solution::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'name'; // This should match the column you want to use for binding
+    }
+
 }
