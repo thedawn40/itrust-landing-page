@@ -88,7 +88,7 @@
   }
 </style>
 
-<section class="clients" style="background-image: url('../assets/5158039.jpg');">
+<section class="clients" style="margin-bottom: 80px;">
   <div class="container" data-aos="fade-up">
     <header class="section-header">
       <h2 class="hero-title">News & Event</h2>
@@ -96,25 +96,25 @@
       <h4>Keeping You Updated with the Latest News and Information on All Our Events and Initiatives</h4>
     </header>
     <div class="navbar-news">
-      <div class="slider-container">
+      <div class="slider-container" style="padding: 0 40px;">
         <button class="prev">&#10094;</button>
         <div class="slider">
           <div class="cards-wrapper">
             @foreach ($news as $post)
             <div class="card">
-              <div class="image-content" style="height: 250px">
+              <div class="image-content">
                 @if ($post->image)
-                <img src="{{ asset('storage/' . $post->image) }}" alt="" class="card-img">
+                  <img  style="width: 100%; object-fit: cover; height: 200px;" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->category->name }}" class="card-img">
                 @else
-                <img src="https://source.unsplash.com/250x200?{{ $post->category->name }}" alt="{{ $post->category->name }}" class="img-fluid mb-3">
+                  <img src="../../../../img/itrust_icon.ico" style="width: 100%; object-fit: cover; height: 200px;" class="img-fluid mb-3">
                 @endif
               </div>
               <div class="card-content">
-                <h2 class="name">{{ $post->title }}</h2>
-                <p class="description mb-3">{{ $post->excerpt }}</p>
+                <h2 style="height: 50px;" class="name">{{ $post->title }}</h2>
+                <p  style="height: 100px" class="description mb-3">{{ $post->excerpt }}</p>
               </div>
               <div>
-                <a class="btn btn-primary mb-4" href="/news-events/{{ $post->slug }}">View More</a>
+                <a class="btn btn-pink mb-4" href="/news-events/{{ $post->slug }}">View More</a>
               </div>
             </div>
             @endforeach

@@ -16,7 +16,7 @@ class PartnerController extends Controller
      */
     public function index()
     {
-        return view('admin.partner.index', [
+        return view('adminv2.partner.index', [
             'partner' => Partner::all(),
             'title'=> "Partner"
         ]);
@@ -29,7 +29,7 @@ class PartnerController extends Controller
      */
     public function create()
     {
-        return view('admin.partner.create',[
+        return view('adminv2.partner.create',[
             'title'=> "Partner"
         ]);
     }
@@ -66,7 +66,7 @@ class PartnerController extends Controller
      */
     public function show(Partner $partner)
     {
-        return view('admin.partner.detail',[
+        return view('adminv2.partner.detail',[
             'partner'=> $partner,
             "title" => "Partner"
         ]);
@@ -80,7 +80,7 @@ class PartnerController extends Controller
      */
     public function edit(Partner $partner)
     {
-        return view('admin.partner.edit',[
+        return view('adminv2.partner.edit',[
             'partner' => $partner,
             "title" => "Partner"
         ]);

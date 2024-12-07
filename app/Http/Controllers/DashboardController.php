@@ -12,7 +12,7 @@ class DashboardController extends Controller
 {
     
     public function index(){
-        return view('admin/dashboard',[
+        return view('adminv2/dashboard',[
             "title" => "Dashboard",
             "totalSolution" => Solution::count(),
             "totalNews" => News::count(),

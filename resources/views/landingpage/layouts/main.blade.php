@@ -25,6 +25,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
 
+	<link href="../../../../../assets-3/vendor/simple-datatables/style.css" rel="stylesheet">
+	<link href="../../../../../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">    
+  
 	<style>
 	.contact-button {
 		position: fixed;
@@ -57,6 +60,50 @@
 		color: #EC2D7C;
 		transform: rotate(-20deg);
 	}
+
+    .btn-pink{
+        background-color: #ec2d7b; color:white; font-weight: bold;
+    }
+
+    .transparent-background {
+        padding-top: 90px;
+        background: 
+            linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 100%),
+            url('../../../assets/1414.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 50px;
+    }
+
+	.card-2 {
+		background-color: white;
+		overflow: hidden;
+		text-align: justify;
+		/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+		position: relative;
+		border: 1px solid rgb(239, 239, 239);
+		border-radius: 8px;
+	}
+
+	.card-2 a {
+		color:#ec2d7b;
+	}
+
+	.card-2 a:hover {
+		color:#c32567;
+	}
+
+	.card-2:hover {
+		box-shadow: 0 8px 8px rgba(137, 137, 137, 0.2);
+	}
+
+	tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    /* border-style: solid; */
+    border-width: 0;
+	border-color: white;
+}
 	</style>
 </head>
 <body>
@@ -84,15 +131,22 @@
 	<!------------------------------------------------------------------------------------------------->
 	<!-- JAVA SCRIPT / BOOTSTRAP / ETC -->
 	<!-- Vendor JS Files -->
-	<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-	<script src="../../assets/vendor/aos/aos.js"></script>
-	<script src="../../assets/vendor/php-email-form/validate.js"></script>
-	<script src="../../assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="../../assets/vendor/purecounter/purecounter.js"></script>
-	<script src="../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+	<script src="../../../assets/vendor/aos/aos.js"></script>
+	<script src="../../../assets/vendor/php-email-form/validate.js"></script>
+	<script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="../../../assets/vendor/purecounter/purecounter.js"></script>
+	<script src="../../../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="../../../../../assets-3/vendor/simple-datatables/simple-datatables.js"></script>
+	<!-- Page level plugins -->
+	<script src="../../../../../assets/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="../../../../../assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+	<script src="../../../../../assets/js/demo/datatables-demo.js"></script>
+
+	
 	<!-- Template Main JS File -->
-	<script src="../assets/js/main.js"></script>
+	<script src="../../../assets/js/main.js"></script>
 	<!------------------------------------------------------------------------------------------------->
 
 	<!-- Swiper JS -->
@@ -169,8 +223,6 @@
 	// s1.setAttribute('crossorigin','*');
 	// s0.parentNode.insertBefore(s1,s0);
 	// })();
-
-
 	</script>
 
 </body>

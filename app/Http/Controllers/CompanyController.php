@@ -14,7 +14,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('admin.companyprofile.index', [
+        return view('adminv2.companyprofile.index', [
             "title" => "Company",
             "company"=> Company::all()->first()
         ]);

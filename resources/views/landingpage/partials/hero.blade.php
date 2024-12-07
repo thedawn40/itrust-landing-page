@@ -6,8 +6,13 @@
                 <h1 data-aos="fade-up">Technology You Trust</h1>
                 <h2 data-aos="fade-up" data-aos-delay="400">Empowering Your Future with Reliable Innovation and Cutting-Edge Solutions</h2>
                 <div data-aos="fade-up" data-aos-delay="600" style="margin-top:20px">
-                    <a href="/contact-us" class="btn btn-primary">Start from Here</a>
+                    <a href="/contact-us" class="btn btn-pink">Start from Here</a>
                 </div>
+            </div>
+            <div class="col-lg-6">
+                <a href="http://www.freepik.com" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/4955653.png" alt="" style="width: 100%">
+                </a>
             </div>
         </div>
     </div>

@@ -36,6 +36,8 @@
 @section('container')
     @include('landingpage.partials.hero')  
 
+    @include('landingpage.section-whyidt')    
+
     <!-- Clients Section -->
     <section class="clients">
         <div class="container" data-aos="fade-up">
@@ -70,11 +72,27 @@
 
     @include('landingpage.sectionsolutions')
 
-    @include('landingpage.section-whyidt')    
-
     @include('landingpage.section-partner')    
     
-    @include('landingpage.sectionnews')
+    <section style="
+    background: rgb(118,0,129);
+    background: linear-gradient(63deg, rgba(118,0,129,1) 0%, rgba(167,0,21,1) 100%);
+    padding: 40px 0;">
+        <div class="container" style="padding: 30px;" data-aos="fade-up">
+            <div class="row gy-4">
+                <div class="col-lg-12 d-flex justify-content-between flex-wrap text-white">
+                    <div>
+                        <h2 style="font-weight: bold">Customer Support</h2>
+                        <h2>{{ $company->customer_support }}</h2>
+                    </div>
+                    <div>
+                        <h2 style="font-weight: bold">Need Assistance?</h2>
+                        <h2>Contact Customer Support or visit our Help Center</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section>        
         <div class="container" data-aos="fade-up">
@@ -91,21 +109,6 @@
         </div>
     </section>
 
-    <section style="background-color: #8E24AA">
-        <div class="container" data-aos="fade-up">
-            <div class="row gy-4">
-                <div class="col-lg-12 d-flex justify-content-between flex-wrap text-white">
-                    <div class="mb-4">
-                        <h2 style="font-weight: bold">Customer Support</h2>
-                        <h2>{{ $company->customer_support }}</h2>
-                    </div>
-                    <div class="mb-4">
-                        <h2 style="font-weight: bold">Need Assistance?</h2>
-                        <h2>Contact Customer Support or visit our Help Center</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('landingpage.sectionnews')
 
 @endsection

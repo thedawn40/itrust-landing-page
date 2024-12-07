@@ -16,7 +16,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('admin.client.index', [
+        return view('adminv2.client.index', [
             'client' => Client::all(),
             'title'=> "Client"
         ]);
@@ -29,7 +29,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('admin.client.create',[
+        return view('adminv2.client.create',[
             'title'=> "Client"
         ]);
     }
@@ -65,7 +65,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        return view('admin.client.detail',[
+        return view('adminv2.client.detail',[
             'client'=> $client,
             "title" => "Client"
         ]);
@@ -79,7 +79,7 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {
-        return view('admin.client.edit',[
+        return view('adminv2.client.edit',[
             'client'=> $client,
             "title" => "Client"
         ]);

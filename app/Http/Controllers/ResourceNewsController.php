@@ -18,7 +18,7 @@ class ResourceNewsController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index', [
+        return view('adminv2.news.index', [
             'news' => News::all(),
             "title" => "News & Events",
         ]);
@@ -31,7 +31,7 @@ class ResourceNewsController extends Controller
      */
     public function create()
     {
-        return view('admin.news.create',[
+        return view('adminv2.news.create',[
             'categories' => Category::all(),
             "title" => "News & Events",
         ]);
@@ -46,7 +46,8 @@ class ResourceNewsController extends Controller
      */
     public function store(Request $request)
     {
-
+        // dd(request());
+        
         $body = $request->body;
 
         $dom = new \DomDocument();
@@ -99,7 +100,7 @@ class ResourceNewsController extends Controller
      */
     public function show(News $news)
     {
-        return view('admin.news.detail',[
+        return view('adminv2.news.detail',[
             'news'=> $news,
             "title" => "News & Events"
         ]);
@@ -113,7 +114,7 @@ class ResourceNewsController extends Controller
      */
     public function edit(News $news)
     {
-        return view('admin.news.edit',[
+        return view('adminv2.news.edit',[
             'news' => $news,
             'categories' => Category::all(),
             "title" => "News & Events"

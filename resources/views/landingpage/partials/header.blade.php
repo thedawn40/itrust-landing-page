@@ -11,7 +11,7 @@
                 <li><a class="nav-link scrollto {{ Request::is('solutions*') ? 'active' : '' }}" href="/solutions">Solutions</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('news-events*') ? 'active' : '' }}" href="/news-events">News & Event</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('contact-us*') ? 'active' : '' }}" href="/contact-us">Contact</a></li>
-                <li style="cursor: not-allowed; pointer-events:none" > <a href="#"><span style="border-radius: 50%; margin-right:5px" class="flag-icon flag-icon-us flag-icon-squared"></span> EN </a></li>
+                {{-- <li style="cursor: not-allowed; pointer-events:none" > <a href="#"><span style="border-radius: 50%; margin-right:5px" class="flag-icon flag-icon-us flag-icon-squared"></span> EN </a></li> --}}
                 @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

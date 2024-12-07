@@ -14,7 +14,7 @@ class MainContentController extends Controller
      */
     public function index()
     {
-        return view('admin.maincontent.index',[
+        return view('adminv2.maincontent.index',[
             'main' => MainContent::all(),
             'title'=> "Solution"
         ]);
@@ -27,7 +27,7 @@ class MainContentController extends Controller
      */
     public function create()
     {
-        return view('admin.maincontent.create',[
+        return view('adminv2.maincontent.create',[
             "title" => "Main Content",
         ]);
     }
@@ -81,7 +81,7 @@ class MainContentController extends Controller
      */
     public function show(MainContent $mainContent)
     {
-        return view('admin.maincontent.detail',[
+        return view('adminv2.maincontent.detail',[
             'main' => $mainContent,
             "title" => "News & Events"
         ]);
@@ -95,7 +95,7 @@ class MainContentController extends Controller
      */
     public function edit(MainContent $mainContent)
     {
-        return view('admin.maincontent.edit',[
+        return view('adminv2.maincontent.edit',[
             'main' => $mainContent,
             "title" => "News & Events"
         ]);

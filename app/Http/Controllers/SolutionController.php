@@ -17,7 +17,7 @@ class SolutionController extends Controller
      */
     public function index()
     {
-        return view('admin.solution.index',[
+        return view('adminv2.solution.index',[
             'solutions' => Solution::all(),
             'title'=> "Solution"
         ]);
@@ -30,7 +30,7 @@ class SolutionController extends Controller
      */
     public function create()
     {
-        return view('admin.solution.create',[
+        return view('adminv2.solution.create',[
             'title'=> "Solution",
         ]);
     }
@@ -71,7 +71,7 @@ class SolutionController extends Controller
      */
     public function show(Solution $solution)
     {
-        return view('admin.solution.detail',[
+        return view('adminv2.solution.detail',[
             'solution' => $solution,
             'title'=> "Solution"
         ]);
@@ -85,7 +85,7 @@ class SolutionController extends Controller
      */
     public function edit(Solution $solution)
     {
-        return view('admin.solution.edit',[
+        return view('adminv2.solution.edit',[
             'solution' => $solution,
             'title'=> "Solution"
         ]);

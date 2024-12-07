@@ -16,7 +16,7 @@ class SolutionDetailController extends Controller
      */
     public function index()
     {
-        return view('admin.solution.detail.index',[
+        return view('adminv2.solution.detail.index',[
             'solutions' => Solution::all(),
             'title'=> "Solution"
         ]);
@@ -29,7 +29,7 @@ class SolutionDetailController extends Controller
      */
     public function create(Solution $solution)
     {
-        return view('admin.solution.detail.create',[
+        return view('adminv2.solution.detail.create',[
             'solution' => $solution,
             'title'=> "Solution"
         ]);
@@ -38,7 +38,7 @@ class SolutionDetailController extends Controller
 
     public function addDetail(Solution $solution)
     {
-        return view('admin.solution.detail.create',[
+        return view('adminv2.solution.detail.create',[
             'solution' => $solution,
             'title'=> "Solution"
         ]);
@@ -48,7 +48,7 @@ class SolutionDetailController extends Controller
     public function viewDetail(Solution $solution, SolutionDetail $details)
     {
 
-        return view('admin.solution.detail.detail',[
+        return view('adminv2.solution.detail.detail',[
             'solution' => $solution,
             'solutionDetail' => $details,
             'title'=> "Solution"
@@ -58,7 +58,7 @@ class SolutionDetailController extends Controller
     public function showDetail(Solution $solution, SolutionDetail $details)
     {
 
-        return view('admin.solution.detail.edit',[
+        return view('adminv2.solution.detail.edit',[
             'solution' => $solution,
             'solutionDetail' => $details,
             'title'=> "Solution"
@@ -172,7 +172,7 @@ class SolutionDetailController extends Controller
      */
     public function show(SolutionDetail $solutionDetail)
     {
-        return view('admin.solution.detail.detail',[
+        return view('adminv2.solution.detail.detail',[
             'solutionDetail' => $solutionDetail,
             'title'=> "Solution Detail"
         ]);

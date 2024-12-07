@@ -7,10 +7,6 @@
         left: 0;
         width: 100%;
         z-index: 1000;
-        background-color: white;
-    }
-    main {
-        padding-top: 70px; /* Adjust this value based on your header's height */
     }
 
     .card-solution{
@@ -21,52 +17,62 @@
         padding: 20px;
         background: white;
     }
+
+    .curve-background{
+        padding-top:90px; 
+        background-image: url('../assets/1414.jpg'); 
+        background-size: cover;
+        border-bottom-left-radius: 50%; 
+        border-bottom-right-radius: 50%; 
+        margin-bottom:50px;
+    }
+
 </style>
 
 @section('container')
 
-    <section 
-    {{-- class="navbar-solutions" --}}
-    >
-        <div class="container" data-aos="fade-up">
-            <header class="section-header" >
-                <h2 class="hero-title" style="background-image: url('../assets/5667001.jpg'); background-size: cover; background-position: center; height: 100px;  display: flex; justify-content: center; align-items: center; text-align: center;">Solutions</h2>
-                <h4 class="mt-3">Solutions for Enhanced Protection Ensuring Data Integrity and Confidentiality in Modern Systems</h4>
+    <section style="padding:0px;">
+            <header class="section-header transparent-background">
+                <h2 class="hero-title" style="height: 100px;  display: flex; justify-content: center; align-items: center; text-align: center;">Solutions</h2>
+                <h4>Solutions for Enhanced Protection Ensuring Data Integrity and Confidentiality in Modern Systems</h4>
             </header>
-            <main style="background-color: #f2f2f5; padding: 50px 0px">
+
+            <div style="margin-top: 100px; margin-bottom: 30px">
+                <main class="container mb-3" data-aos="fade-up">
                 
-                <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-                    @foreach ($solutions as $post)
-                    <div class="card-solution" style="width: calc(33.33% - 20px); margin-bottom: 20px;">
-                        <div style="width: 100%;">
-                            @if ($post->image)
-                                <img style="width: 100px;" src="{{ asset('storage/' . $post->image) }}" alt="Card image">
-                            @else
-                                <img src="https://source.unsplash.com/200x200?{{ $post->title }}" alt="{{ $post->title }}" class="img-fluid mb-3" style="width: 100%;">
-                            @endif
-                        </div>
-                        <br>
-                        <div>
-                            <div class="card-solution-header" style="font-weight: bold;">{{ $post->name }}</div>
-                            <br>
-                            <div>
-                                {{ Str::limit(strip_tags($post->description), 100) }}...
+                    <div class="row g-3" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                        @foreach ($solutions as $post)
+                        <div class="col-sm-12 col-md-6 col-lg-3" style="margin-bottom: 20px; padding: 10px;">
+                            <div class="card-2" style="padding: 15px; text-align: center;">
+                                <div style="width: 100%;">
+                                    @if ($post->image)
+                                        <img style="width: 100%; height: 200px;" src="{{ asset('storage/' . $post->image) }}" alt="Card image">
+                                    @else
+                                        <img src="https://source.unsplash.com/200x200?{{ $post->title }}" alt="{{ $post->title }}" class="img-fluid mb-3" style="width: 100%;">
+                                    @endif
+                                </div>
+                                <br>
+                                <div>
+                                    <div class="card-solution-header" style="font-weight: bold; height: 50px;">
+                                        <a  href="/solutions/{{ $post->name }}">{{ $post->name }}</a>
+                                    </div>
+                                    <div style="height: 120px;">
+                                        {!! Str::limit(strip_tags($post->description), 100) !!}...
+                                    </div>
+                                </div>
                             </div>
-                            <a class="btn btn-primary mb-3 mt-3" href="/solutions/{{ $post->name }}">View More</a>
                         </div>
-                        <div style="display: flex; justify-content: space-around;" class="footer-card">
-                        </div>
+                        @endforeach
                     </div>
-                    @endforeach
-                </div>
+    
                 
-            </main>
-        </div>
-    </section>
+                </main>
+                @include('landingpage.section-whyidt')    
+    
+                @include('landingpage.section-partner')    
+            </div>
 
-    @include('landingpage.section-whyidt')    
-
-    @include('landingpage.section-partner')    
+        </section>
     
 @endsection
 <!-- End Clients Section -->

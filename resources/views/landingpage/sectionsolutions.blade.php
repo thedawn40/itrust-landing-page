@@ -47,27 +47,38 @@
 </style>
 
 <!-- Clients Section -->
-<section class="clients" style="background-image: url('../assets/5158039.jpg');">
-    <div class="container" data-aos="fade-up">
+{{-- 5667001, 5158039 --}}
+{{-- <section class="clients" style="background-image: url('../assets/5667001.jpg');"> --}}
+    <section class="clients">
+        <div class="container" data-aos="fade-up">
         <header class="section-header">
             <h2 class="hero-title">Solutions</h2>
             <h4 class="mt-3">Solutions for Enhanced Protection Ensuring Data Integrity and Confidentiality in Modern Systems</h4>
 
             {{-- <p>Starting from the experience, professionalism, and trust from customers, iTrust Data Technology is here as a reliable company ready to be a solution to your data security protection needs. Along with trusted and proven products and solutions, iTrust is committed to deliver beyond expectation solutions.</p>		 --}}
         </header>
-        <div class="card-grid">
-            @foreach ($solutions as $item)
-                <div class="card-container">
-                    <div class="card-solution">
-                        <div class="card-front">
-                            <h3 style="font-weight: bold">{{ $item->name }}</h3>
-                            {{-- <p>{{ $item->description }}</p> --}}
+        <div class="row" style="display: flex; justify-content: center;">
+            @foreach ($solutions as $item)                
+                <div class="col-sm-12 col-md-6 col-lg-3" style="text-align: center; background:white; margin-bottom:20px; border-radius:8px; padding: 0px 10px;">
+                    <div class="card-2" style="padding:25px; text-align: center;">
+                        <div>
+                            @if ($item->image)
+                                <img style="width: 100%; height: 150px;" src="{{ asset('storage/' . $item->image) }}" alt="Card image">
+                            @else
+                                <img src="../../../../img/itrust_icon.ico" class="img-fluid mb-3" style="width: 100%; object-fit: cover; height: 150px;">
+                            @endif
                         </div>
-                        <div class="card-back">
-                            <a class="btn btn-primary mb-4" href="/solutions/{{ $item->name }}">View More</a>
-                        </div>
+                        <br>
+                        <div>
+                            <div class="card-solution-header" style="font-weight: bold; height: 50px;">
+                                <a href="/solutions/{{ $item->name }}">{{ $item->name }}</a>
+                            </div>
+                            <div style="height: 120px">
+                                {!! Str::limit(strip_tags($item->description), 100) !!}...
+                            </div>
+                        </div>    
                     </div>
-                </div> 
+                </div>
             @endforeach
         </div>
     </div>
