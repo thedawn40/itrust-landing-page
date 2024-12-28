@@ -8,6 +8,7 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a></li>
+                <li><a class="nav-link scrollto {{ Request::is('about*') ? 'active' : '' }}" href="/about">About</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('solutions*') ? 'active' : '' }}" href="/solutions">Solutions</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('news-events*') ? 'active' : '' }}" href="/news-events">News & Event</a></li>
                 <li><a class="nav-link scrollto {{ Request::is('contact-us*') ? 'active' : '' }}" href="/contact-us">Contact</a></li>

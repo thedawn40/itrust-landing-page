@@ -27,6 +27,14 @@ class HomeController extends Controller
         ]);
     }
 
+    public function about(){
+        return view('landingpage/about',[
+            "title" => "About",
+            "solutions" => Solution::all(),
+            "company" => Company::all()->first()
+        ]);
+    }
+
     public function solutions(){
         return view('landingpage/solutions',[
             "title" => "Solutions",
@@ -73,7 +81,7 @@ class HomeController extends Controller
 
     public function contactus(){
         return view('landingpage/contact-us',[
-            "title" => "News",
+            "title" => "Contact US",
             "news" => News::all(),
             "company" => Company::all()->first()
         ]);
