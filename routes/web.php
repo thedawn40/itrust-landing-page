@@ -15,6 +15,7 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\SolutionDetailController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HeadingController;
 use App\Http\Controllers\MainContentController;
 
 /*
@@ -74,6 +75,7 @@ Route::get('/resource/news/checkSlug', [ResourceNewsController::class, 'checkSlu
 
 Route::resource('/admin/partner',PartnerController::class)->middleware('auth');
 Route::resource('/admin/client',ClientController::class)->middleware('auth');
+Route::resource('/admin/heading',HeadingController::class)->middleware('auth');
 
 Route::resource('/admin/solution', SolutionController::class)->middleware('auth');
 Route::get('/admin/solution/{solution}/edit', [SolutionController::class, 'edit'])->middleware('auth')->name('admin.solution.edit');

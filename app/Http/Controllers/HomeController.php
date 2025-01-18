@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\Company;
+use App\Models\Heading;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Partner;
@@ -23,6 +24,7 @@ class HomeController extends Controller
             "news" => News::all(),
             "partners" => Partner::all(),
             "clients" => Client::all(),
+            "headings"=> Heading::all(),
             "company" => Company::all()->first(),
         ]);
     }

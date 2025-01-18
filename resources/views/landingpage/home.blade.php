@@ -34,7 +34,11 @@
 </style>
 
 @section('container')
-    @include('landingpage.partials.hero')  
+    {{-- @include('landingpage.partials.hero')   --}}
+
+    {{-- @include('landingpage.section-slider') --}}
+    {{-- Image Slider Section --}}
+    @include('landingpage.section-image-slider')
 
     @include('landingpage.section-whyidt')    
 

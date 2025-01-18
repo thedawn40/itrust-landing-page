@@ -60,6 +60,12 @@
             <li class="nav-item {{ Request::is('admin/company') ? 'active' : '' }}">
                 <a class="nav-link" href="/admin/company">
                     <i class="fas fa-fw fa-table"></i>
+                    <span>Heading</span></a>
+            </li>
+
+            <li class="nav-item {{ Request::is('admin/company') ? 'active' : '' }}">
+                <a class="nav-link" href="/admin/company">
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Company Profile</span></a>
             </li>
 
