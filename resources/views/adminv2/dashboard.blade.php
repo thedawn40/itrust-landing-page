@@ -26,7 +26,7 @@
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-cart"></i>
+                    <i class="bi bi-files"></i>
                   </div>
                   <div class="ps-3">
                     <h6>{{ $totalSolution }}</h6>
@@ -45,7 +45,7 @@
 
                 <div class="d-flex align-items-center">
                   <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                    <i class="bi bi-currency-dollar"></i>
+                    <i class="bi bi-newspaper"></i>
                   </div>
                   <div class="ps-3">
                     <h6>{{ $totalNews }}</h6>
