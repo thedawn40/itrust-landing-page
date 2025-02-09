@@ -7,6 +7,7 @@ use App\Models\Solution;
 use App\Models\News;
 use App\Models\Partner;
 use App\Models\Client;
+use App\Models\Message;
 
 class DashboardController extends Controller
 {
@@ -17,7 +18,9 @@ class DashboardController extends Controller
             "totalSolution" => Solution::count(),
             "totalNews" => News::count(),
             "totalPartner" => Partner::count(),
-            "totalClient" => Client::count()
+            "totalClient" => Client::count(),
+            'messages' => Message::latest()->get(),
+            "news" => News::latest()->take(5)->get()
         ]);    
     }
 }

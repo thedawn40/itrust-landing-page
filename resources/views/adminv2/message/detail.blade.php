@@ -2,12 +2,12 @@
 
 @section('container')
 
-@include('adminv2.news.title')
+@include('adminv2.message.title')
 
 <nav>
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-    <li class="breadcrumb-item"><a href="/admin/news">News & Events</a></li>
+    <li class="breadcrumb-item"><a href="/admin/news">Messages</a></li>
     <li class="breadcrumb-item active">View</li>
   </ol>
 </nav>

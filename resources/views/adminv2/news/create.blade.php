@@ -3,7 +3,7 @@
 
 @section('container')
 
-@include('admin.news.title')
+@include('adminv2.news.title')
 
 <nav>
   <ol class="breadcrumb">

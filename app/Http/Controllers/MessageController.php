@@ -59,7 +59,10 @@ class MessageController extends Controller
      */
     public function show(Message $message)
     {
-        //
+        return view('adminv2.message.detail',[
+            'messages' => $message,
+            'title'=> "Message"
+        ]);
     }
 
     /**

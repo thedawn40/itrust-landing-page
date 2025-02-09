@@ -46,11 +46,11 @@
         <td> {{ $item->subject }} </td>
         <td> {{ $item->message }} </td>
         <td> 
-            <a href="/admin/solution/{{ $item->name }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
+            <a href="/message/{{ $item->id }}" class="btn btn-primary"><i class="bi bi-eye"></i></a>
             <form action="/message/{{ $item->id }}" method="POST" class="d-inline">
               @method('delete') 
               @csrf           
-              <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
+              <button class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
             </form>
         </td>
       </tr>          
