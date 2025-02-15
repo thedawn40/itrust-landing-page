@@ -65,8 +65,8 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->middlewar
 
 
 
-Route::post('/login', [LoginController::class,'authenticate']);
-Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/pikurjdart', [LoginController::class,'authenticate']);
+Route::get('/pikurjdart', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::get('/logout', [LoginController::class,'logout']);
 
 

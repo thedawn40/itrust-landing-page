@@ -29,7 +29,7 @@
 
         <div class="container">
             <header>
-                <h2 class="hero-title" style="font-weight:bold; text-align: center;">{{ $solution->name }}</h2>
+                <h2 class="hero-title" style="font-weight:bold; text-align: center; margin-bottom:40px;">{{ $solution->name }}</h2>
                 <div class="row" style="display: flex;">
                     <div class="col-sm-12 col-md-6" style="text-align:center">
                         @if ($solution->image)
@@ -38,14 +38,14 @@
                             <img src="https://source.unsplash.com/200x200?{{ $solution->title }}" alt="{{ $post->title }}" class="img-fluid mb-3">
                         @endif
                     </div>
-                    <div class="col-sm-12 col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="col-sm-12 col-md-6" style="justify-content: center; align-items: center;">
                         {!! $solution->description !!}    
                     </div>
                 </div>
             </header>
             <br>
             <main style="padding-top: 10px; margin-bottom:100px;" data-aos="fade-up">
-                <h3 style="text-align: center; margin-bottom:25px">Our Portofolio</h3>
+                <h3 style="text-align: center; margin-bottom:25px">Solution</h3>
                 <div style="display: flex; justify-content:space-evenly">
                     @foreach ($solution->details as $item)
                         <div class="col-sm-12 col-md-6 col-lg-3" class="container-solution-detail" >
@@ -56,7 +56,9 @@
                                     <p class="limited-text">
                                         <span class="solution-description">
                                             {{-- Check if description is longer than the limit --}}
-                                            {{ Str::limit(strip_tags($item->description), 250) }}...
+                                            {{-- {!! Str::limit(($item->description), 250) !!}... --}}
+                                            {{-- {{ Str::limit(strip_tags(str_replace(['\r\n', '\n'], ' ', $item->description)), 250) }}... --}}
+                                            {{ Str::limit(strip_tags(str_replace(['<br>', '<br/>', '<br />', '<p>','</p>'], ' ', $item->description)), 250) }}...
                                         </span>
                                         <br>
                                     </p>

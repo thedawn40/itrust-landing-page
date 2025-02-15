@@ -164,7 +164,7 @@
       </div>
     @endif
 
-  <form action="/login" method="post">
+  <form action="/pikurjdart" method="post">
     @csrf
     <img class="mb-4" src="img/itrust_icon.ico" alt="" width="70">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -185,7 +185,7 @@
       </label>
     </div> --}}
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2025</p>
   </form>
 </main>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
